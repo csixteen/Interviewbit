@@ -15,6 +15,14 @@ class Solution:
         
         return singular.pop()
 
+    def singleNumber2(A):
+        """
+        A^A = 0
+        A^0 = A
+        A^B^A = B
+        """
+        return reduce(lambda x, y: x^y, A)
+
 
 class TestSolution(unittest.TestCase):
     def setUp(self):
