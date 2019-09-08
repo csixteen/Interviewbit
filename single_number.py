@@ -6,6 +6,10 @@ import unittest
 class Solution:
     @staticmethod
     def singleNumber(A):
+        """
+        Time complexity: O(n)
+        Space complexity: O(n)
+        """
         singular = set()
         for i in A:
             if i in singular:
@@ -17,6 +21,9 @@ class Solution:
 
     def singleNumber2(A):
         """
+        Time complexity: O(n)
+        Space complexity: O(1)
+
         A^A = 0
         A^0 = A
         A^B^A = B
