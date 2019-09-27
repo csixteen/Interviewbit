@@ -6,7 +6,7 @@ import unittest
 class Solution:
     @staticmethod
     def mergeTwoLists(A, B):
-        l3, head = None,  None
+        C, head = None,  None
         while not (A is None and B is None):
             choose_A = (B is None) or \
                 (A is not None and B is not None and A.val < B.val)
@@ -18,11 +18,11 @@ class Solution:
                 B = B.next
 
             if head is None:
-                l3 = ListNode(tmp)
-                head = l3
+                C = ListNode(tmp)
+                head = C
             else:
-                l3.next = ListNode(tmp)
-                l3 = l3.next
+                C.next = ListNode(tmp)
+                C = C.next
         return head
 
 class TestSolution(unittest.TestCase):
