@@ -25,6 +25,26 @@ class Solution:
                 C = C.next
         return head
 
+    def mergeTwoLists2(A, B):
+        dummy = ListNode(None)
+        curr = dummy
+        while A and B:
+            if A.val < B.val:
+                curr.next = A
+                A = A.next
+            else:
+                curr.next = B
+                B = B.next
+            curr = curr.next
+
+        if A:
+            curr.next = A
+        elif B:
+            curr.next = B
+
+        return dummy.next
+
+
 class TestSolution(unittest.TestCase):
     def setUp(self):
         self.test_cases = []
