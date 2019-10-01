@@ -5,7 +5,7 @@ import unittest
 
 class Solution:
     @staticmethod
-    def swapPairs(A):
+    def swapPairs2(A):
         if not A.next:
             return A
 
@@ -24,6 +24,16 @@ class Solution:
             tmp = None
             prev = left
             left = left.next
+
+        return head
+
+    @staticmethod
+    def swapPairs(A):
+        head = A.next if A and A.next else A
+        while A and A.next:
+            C = A.next.next
+            D = C.next if C and C.next else C
+            A.next.next, A.next, A = A, D, C
 
         return head
         
