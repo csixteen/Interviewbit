@@ -14,6 +14,7 @@ class Solution:
         node1 = head1
         while A and B > 1:
             node1.next, node1, A = A, A, A.next
+            B -= 1
 
         prev = None
         curr = A
@@ -33,7 +34,6 @@ class Solution:
         tmp.next = curr
 
         return head1.next
-
 
 class TestSolution(unittest.TestCase):
     def setUp(self):
