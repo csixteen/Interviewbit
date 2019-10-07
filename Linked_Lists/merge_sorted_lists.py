@@ -5,26 +5,6 @@ import unittest
 
 class Solution:
     @staticmethod
-    def mergeTwoLists(A, B):
-        C, head = None,  None
-        while not (A is None and B is None):
-            choose_A = (B is None) or \
-                (A is not None and B is not None and A.val < B.val)
-            if choose_A:
-                tmp = A.val
-                A = A.next
-            else:
-                tmp = B.val
-                B = B.next
-
-            if head is None:
-                C = ListNode(tmp)
-                head = C
-            else:
-                C.next = ListNode(tmp)
-                C = C.next
-        return head
-
     def mergeTwoLists2(A, B):
         dummy = ListNode(None)
         curr = dummy
