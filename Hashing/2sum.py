@@ -6,34 +6,6 @@ import unittest
 
 class Solution:
     @staticmethod
-    def twoSum2(A, B):
-        d = defaultdict(deque)
-        for i, n in enumerate(A, 1):
-            d[n].append(i)
-
-        index1, index2 = None, float('inf')
-        for n in A:
-            if n in d and B - n in d:
-                i = d[n].popleft()
-                if len(d[n]) == 0:
-                    del d[n]
-
-                if B - n in d:
-                    j = d[B - n].popleft()
-                    if len(d[B - n]) == 0:
-                        del d[B - n]
-                else:
-                    continue
-
-                if j < index2:
-                    index1 = i
-                    index2 = j
-
-        if index1:
-            return [index1, index2]
-
-        return []
-
     def twoSum(A, B):
         diffs = {}
         for i, v in enumerate(A, 1):
