@@ -37,7 +37,7 @@ class Solution:
         lo, hi = 0, len(A) - 1
         while lo <= hi:
             mid = lo + (hi - lo) // 2
-            # We reached the leftmost value
+            # We reached the rightmost value
             if A[mid] == B and ((mid == len(A) - 1) or A[mid+1] > B):
                 ret.append(mid)
                 break
