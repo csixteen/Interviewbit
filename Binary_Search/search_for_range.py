@@ -6,6 +6,9 @@ import unittest
 class Solution:
     @staticmethod
     def searchRange(A, B):
+        """
+        Time complexity: O(lgn)
+        """
         if len(A) == 0 or A[0] > B or A[-1] < B:
             return [-1, -1]
 
@@ -30,6 +33,7 @@ class Solution:
         if len(ret) == 0:
             return [-1, -1]
 
+        # search for right
         lo, hi = 0, len(A) - 1
         while lo <= hi:
             mid = lo + (hi - lo) // 2
