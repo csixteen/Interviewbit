@@ -5,9 +5,8 @@ import unittest
 
 class Solution:
     def remove(self, A, x):
-        B = A[:]
-        B.remove(x)
-        return B
+        i = A.index(x)
+        return A[:i] + A[i+1:]
 
     def permute(self, A):
         if len(A) == 0:
