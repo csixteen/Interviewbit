@@ -11,6 +11,22 @@ class Solution:
 
         return sorted(res)
 
+    def subsets2(self, A):
+        def subsets_rec(S, index):
+            if index == len(S):
+                allsubsets = [[]]
+            else:
+                allsubsets = subsets_rec(S, index + 1)
+                moresubsets = []
+                for subs in allsubsets:
+                    moresubsets.append(sorted(subs + [S[index]]))
+
+                allsubsets.extend(moresubsets)
+
+            return allsubsets
+
+        return subsets_rec(A, 0)
+
 
 class TestSolution(unittest.TestCase):
     def setUp(self):
