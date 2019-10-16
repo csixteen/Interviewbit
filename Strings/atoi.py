@@ -7,12 +7,7 @@ import unittest
 class Solution:
     def atoi(self, N):
         g = re.match(r'\s*((\-|\+)?\d+)[\s|\w]*', N)
-        if g:
-            i = int(g.group(1))
-            i = max(min(i, 2147483647), -2147483648)
-            return i
-        else:
-            return 0
+        return max(min(int(g.group(1)), 2147483647), -2147483648) if g else 0
 
 
 class TestSolution(unittest.TestCase):
