@@ -5,6 +5,10 @@ import unittest
 
 class Solution:
     def maxArea(self, heights):
+        """
+        Time complexity: O(n)
+        Space complexity: O(1)
+        """
         i, j = 0, len(heights) - 1
         max_area = 0
         while i != j:
