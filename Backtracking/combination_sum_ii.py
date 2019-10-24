@@ -8,7 +8,7 @@ class Solution:
         def DFS(arr, target, res, acc, current_sum, start):
             if current_sum == target:
                 res.append(acc)
-            elif current_sum > target:
+            elif current_sum > target or start >= len(arr):
                 return
             else:
                 i = start
