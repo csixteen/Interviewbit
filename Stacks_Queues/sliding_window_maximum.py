@@ -13,11 +13,12 @@ class Solution:
         return [max(nums[i:i+k]) for i in range(len(nums) - k + 1)]
 
     def maxSlidingWindowDoubleEndedQueue(self, A, B):
-        result = [0] * (len(A)-B+1)
+        res = []
         d = deque()
 
         for index, current in enumerate(A):
             if d and d[0] == index - B:
+                print(d, index, B)
                 d.popleft()
 
             while d and A[d[-1]] < current:
@@ -25,9 +26,9 @@ class Solution:
             d.append(index)
 
             if index + 1 >= B:
-                result[index - B + 1] = A[d[0]]
+                res.append(A[d[0]])
 
-        return result
+        return res
 
 
 class TestSolution(unittest.TestCase):
