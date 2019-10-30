@@ -16,7 +16,6 @@ class Solution:
                 DFS(A, t, res, acc + [A[i]], current_sum + A[i], i)
                 i += 1
                 
-
         res = set()
         DFS(candidates, target, res, [], 0, 0)
 
