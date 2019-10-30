@@ -18,7 +18,6 @@ class Solution:
 
         for index, current in enumerate(A):
             if d and d[0] == index - B:
-                print(d, index, B)
                 d.popleft()
 
             while d and A[d[-1]] < current:
