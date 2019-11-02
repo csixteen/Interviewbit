@@ -11,6 +11,17 @@ class TreeNode:
 
 
 class Solution:
+    def hasPathSum2(self, root, s):
+        if not root:
+            return False
+        elif root.val == s and not root.left and not root.right:
+            return True
+        else: 
+            if self.hasPathSum2(root.left, s - root.val):
+                return True
+            if self.hasPathSum2(root.right, s - root.val):
+                return True
+
     def hasPathSum(self, root, s):
         def DFS(node, target, acc):
             if acc + node.val == target and not node.left and not node.right:
